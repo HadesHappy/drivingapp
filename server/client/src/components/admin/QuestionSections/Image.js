@@ -31,8 +31,8 @@ const Image = () => {
         if (typeof (problem.image) === 'object')
           setUrl(URL.createObjectURL(problem.image))
         else {
-          setUrl(`${BACKEND_URL}server/public/images/` + problem.image)
-          console.log(`${BACKEND_URL}server/public/images/`)
+          setUrl(`${BACKEND_URL}images/` + problem.image)
+          console.log(`${BACKEND_URL}images/`)
         }
       }
       else
