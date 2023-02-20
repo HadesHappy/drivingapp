@@ -97,14 +97,14 @@ const ChoiceButton = ({ name = '', content = '', answer = '', choice, setChoice,
     imageString1 = (
       <div className='flex flex-row min-w-fit -space-x-2 overflow-hidden'>
         {subImages1.map((user, key) =>
-          <Avatar className="inline-block h-8 w-8 rounded-full ring-2 ring-white" size='30' name={user.name} src={`${BACKEND_URL}/avatars/${`${BACKEND_URL}/avatars/${user.image}`}`} alt="" key={key} />)}
+          <Avatar className="inline-block h-8 w-8 rounded-full ring-2 ring-white" size='30' name={user.name} src={`${BACKEND_URL}avatars/${`${BACKEND_URL}avatars/${user.image}`}`} alt="" key={key} />)}
         <div className='flex h-8 w-8 rounded-full ring-2 ring-white bg-[#3598DB] text-white font-medium text-center justify-center items-center'>{extraNum}+</div>
       </div>)
 
     imageString2 = (
       <div className='flex flex-row min-w-fit -space-x-2 overflow-hidden'>
         {subImages2.map((user, key) =>
-          <Avatar className="inline-block h-8 w-8 rounded-full ring-2 ring-white" size='30' name={user.name} src={`${BACKEND_URL}/avatars/${`${BACKEND_URL}/avatars/${user.image}`}`} alt="" key={key} />)}
+          <Avatar className="inline-block h-8 w-8 rounded-full ring-2 ring-white" size='30' name={user.name} src={`${BACKEND_URL}avatars/${`${BACKEND_URL}avatars/${user.image}`}`} alt="" key={key} />)}
         <div className='flex h-8 w-8 rounded-full ring-2 ring-white bg-[#3598DB] text-white font-medium text-center justify-center items-center'>{extraNum}+</div>
       </div>)
   }
@@ -145,10 +145,10 @@ const ChoiceButton = ({ name = '', content = '', answer = '', choice, setChoice,
                           :
                           choice === name ?
                             images2.map((user, key) =>
-                              <Avatar className="inline-block h-8 w-8 rounded-full ring-2 ring-white" size='30' name={user.name} src={`${BACKEND_URL}/avatars/${user.image}`} alt="" key={key} />)
+                              <Avatar className="inline-block h-8 w-8 rounded-full ring-2 ring-white" size='30' name={user.name} src={`${BACKEND_URL}avatars/${user.image}`} alt="" key={key} />)
                             :
                             users.map((user, key) =>
-                              <Avatar className="inline-block h-8 w-8 rounded-full ring-2 ring-white" size='30' name={user.name} src={`${BACKEND_URL}/avatars/${user.image}`} alt="" key={key} />)
+                              <Avatar className="inline-block h-8 w-8 rounded-full ring-2 ring-white" size='30' name={user.name} src={`${BACKEND_URL}avatars/${user.image}`} alt="" key={key} />)
                       }
                     </div>
                     {
@@ -348,7 +348,7 @@ const Study = () => {
                     <StudyButton name='la he adivinado' onClick={onGuessClick} checked={isGuessChecked} />
                     <StudyButton name='de memoria' onClick={onMemoryClick} checked={isMemoryChecked} />
                   </div>
-                  <img className='my-3 w-[701px] h-[423px]' src={`${BACKEND_URL}/images/${currentData.image}`} alt='test_image' />
+                  <img className='my-3 w-[701px] h-[423px]' src={`${BACKEND_URL}images/${currentData.image}`} alt='test_image' />
                   <div className='flex flex-row gap-5'>
                     <div className='flex flex-row bg-[#3598DB] space-x-5 py-4 w-52 rounded-xl items-center justify-center cursor-pointer' onClick={onVideoClick}>
                       <img src='/assets/icons/Group 88.png' alt='video' />

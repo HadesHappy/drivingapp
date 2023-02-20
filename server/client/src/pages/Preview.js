@@ -3,6 +3,7 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import Bottom from '../components/users/exam/Bottom'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { BACKEND_URL } from '../utils/constants'
 
 const Preview = () => {
   const location = useLocation();
@@ -16,7 +17,7 @@ const Preview = () => {
         setUrl(URL.createObjectURL(problem.image))
       }
       else {
-        setUrl(problem.image)
+        setUrl(`${BACKEND_URL}images/${problem.image}`)
       }
 
   }, [])
