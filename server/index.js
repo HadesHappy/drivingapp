@@ -34,7 +34,9 @@ connection.once('open', () => {
 
 const Routes = require('./routes/index')
 app.use('/api', Routes)
-app.use(express.static(path.join(__dirname, 'client/build/')));
+app.use(express.static(path.join(__dirname, 'client/build/')))
+app.use(express.static(path.join(__dirname, 'public')))
+
 app.set('client/build', path.join(__dirname, 'client/build'))
 app.set('view engine', 'html');
 app.get('*', (req, res) => {
