@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/HadesHappy/drivingschool#readme",
   "dependencies": {
-    "concurrently": "^7.5.0"
+    "concurrently": "^7.5.0",
+    "uuid": "^9.0.0"
   }
 }

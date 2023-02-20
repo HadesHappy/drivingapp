@@ -1,4 +1,5 @@
 // const sharp = require('sharp')
+const uuid = require('uuid');
 
 const uploadImage = async (req, res, next) => {
 
@@ -12,9 +13,9 @@ const uploadImage = async (req, res, next) => {
         return new Promise(async (resolve) => {
           const file = req.files[key]
 
-          const suffixUrl = `/assets/imgs/${Date.now()}-driving-${file.name}`
+          const suffixUrl = `/assets/imgs/${uuid.v1()}-driving-${file.name}`
           const path = `${__dirname}/../client/build${suffixUrl}`
-          const path1 = `${__dirname}/../files/${Date.now()}-driving-${file.name}`
+          const path1 = `${__dirname}/../files/${uuid.v1()}-driving-${file.name}`
 
           await file.mv(path, (err) => {
             if (err) {
