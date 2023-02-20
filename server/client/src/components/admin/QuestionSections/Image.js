@@ -30,8 +30,10 @@ const Image = () => {
       if (problem.image) {
         if (typeof (problem.image) === 'object')
           setUrl(URL.createObjectURL(problem.image))
-        else
-          setUrl(`${BACKEND_URL}/images/` + problem.image)
+        else{
+          setUrl(`${BACKEND_URL}/server/public/images/` + problem.image)
+          console.log(`${BACKEND_URL}/server/public/images/`)
+        }
       }
       else
         setUrl('/assets/icons/Main Image.png')
