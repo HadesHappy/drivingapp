@@ -1,7 +1,6 @@
 import React from 'react'
 import { useRoutes } from 'react-router-dom';
 
-import HomePage from '../pages/home'
 import SignUp from '../pages/auth/Signup';
 import Signin from '../pages/auth/Signin';
 

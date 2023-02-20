@@ -5,6 +5,7 @@ import { setIndex, setTopNum } from '../../../../actions/test'
 import { useDispatch } from 'react-redux'
 import { displayNum } from '../../../../utils/display'
 import Avatar from 'react-avatar'
+import { BACKEND_URL } from '../../../../utils/constants'
 
 const StatusCircle = ({ result = {} }) => {
   return (
@@ -110,7 +111,7 @@ const TodoTest = ({ test = '', no = '' }) => {
       const extraNum = test.totalUsers - 4
       imageString = (<>
         {subUsers.map((user, key) =>
-          <Avatar className="inline-block h-8 w-8 rounded-full ring-2 ring-white" size='30' name = {user.name} src={user.image} alt="" key={key} />)}
+          <Avatar className="inline-block h-8 w-8 rounded-full ring-2 ring-white" size='30' name = {user.name} src={`${BACKEND_URL}images/${user.image}`} alt="" key={key} />)}
         <div className='flex h-8 w-8 rounded-full ring-2 ring-white bg-[#3598DB] text-white font-medium text-center justify-center items-center'>{extraNum}+</div>
       </>)
     }
@@ -197,7 +198,7 @@ const TodoTest = ({ test = '', no = '' }) => {
                 imageString
                 :
                 test.users.map((user, key) =>
-                  <Avatar className="inline-block h-8 w-8 rounded-full ring-2 ring-white" size='30' name={user.name} src={user.image} alt="" key={key} />)
+                  <Avatar className="inline-block h-8 w-8 rounded-full ring-2 ring-white" size='30' name={user.name} src={`${BACKEND_URL}images/${user.image}`} alt="" key={key} />)
               : <></>
           }
         </div>

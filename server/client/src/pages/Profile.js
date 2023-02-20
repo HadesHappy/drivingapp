@@ -5,7 +5,8 @@ import toast from 'react-hot-toast'
 import UploadModal from '../components/auth/Editor/UploadModal'
 import FormAction from '../components/auth/FormAction'
 import Input from '../components/auth/Input'
-import {signupFields} from '../components/auth/FormFields'
+import { signupFields } from '../components/auth/FormFields'
+import { BACKEND_URL } from '../utils/constants'
 
 const fields = signupFields
 let fieldsState = {};
@@ -16,7 +17,7 @@ const Profile = () => {
   const { account, changeAccount } = useAuth()
 
   const [formData, setFormData] = useState(fieldsState)
-  const [avatar, setAvatar] = useState(account?.image || '/assets/emotions/avatar1.png')
+  const [avatar, setAvatar] = useState(`${BACKEND_URL}avatars/${account?.image}` || '/assets/emotions/avatar1.png')
   const [showModal, setShowModal] = useState(false)
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -27,11 +28,11 @@ const Profile = () => {
     else if (formData.password !== formData.confirmPassword)
       toast.error("Password doesn't match")
     else {
-      try{
+      try {
         await changeAccount(formData)
         navigate(-1)
       }
-      catch(error){
+      catch (error) {
         console.log(error)
       }
     }
@@ -41,9 +42,9 @@ const Profile = () => {
     setShowModal(true)
   }
 
-  useEffect(()=>{
-    setFormData({ ...formData, name: account?.name});
-  },[])
+  useEffect(() => {
+    setFormData({ ...formData, name: account?.name });
+  }, [])
 
   return (
     <div className='min-h-full h-screen flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8'>
@@ -77,14 +78,14 @@ const Profile = () => {
                 )
               }
               <FormAction handleClick={handleClick} text="Update" />
-              <div className='text-center w-full py-2 mt-2 bg-gray-400 text-white rounded-md cursor-pointer' onClick={()=> navigate(-1)}>
+              <div className='text-center w-full py-2 mt-2 bg-gray-400 text-white rounded-md cursor-pointer' onClick={() => navigate(-1)}>
                 Cancel
               </div>
             </>
             <UploadModal showModal={showModal} setShowModal={setShowModal} setFiles={setAvatar} setFormData={setFormData} formData={formData} />
           </form>
-        </div>  
-      </div> 
+        </div>
+      </div>
     </div>
   )
 }
