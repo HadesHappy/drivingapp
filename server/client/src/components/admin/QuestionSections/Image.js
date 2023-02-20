@@ -32,7 +32,7 @@ const Image = () => {
           setUrl(URL.createObjectURL(problem.image))
         else {
           setUrl(`${BACKEND_URL}images/` + problem.image)
-          console.log(`${BACKEND_URL}images/`)
+          console.log(`${BACKEND_URL}images/${problem.image}`)
         }
       }
       else
