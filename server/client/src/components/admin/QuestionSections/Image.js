@@ -29,7 +29,7 @@ const Image = () => {
     if (problem) {
       if (problem.image) {
         if (typeof (problem.image) === 'object')
-          setUrl(`${BACKEND_URL}/images/` + URL.createObjectURL(problem.image))
+          setUrl(URL.createObjectURL(problem.image))
         else
           setUrl(`${BACKEND_URL}/images/` + problem.image)
       }
