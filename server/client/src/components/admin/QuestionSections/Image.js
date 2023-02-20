@@ -4,6 +4,7 @@ import { updateProblem } from '../../../actions/problem'
 
 import { useParams } from 'react-router-dom'
 import { FileUploader } from 'react-drag-drop-files'
+import { BACKEND_URL } from '../../../utils/constants'
 
 const Image = () => {
   const { id } = useParams()
@@ -28,9 +29,9 @@ const Image = () => {
     if (problem) {
       if (problem.image) {
         if (typeof (problem.image) === 'object')
-          setUrl(URL.createObjectURL(problem.image))
+          setUrl(`${BACKEND_URL}/images/` + URL.createObjectURL(problem.image))
         else
-          setUrl(problem.image)
+          setUrl(`${BACKEND_URL}/images/` + problem.image)
       }
       else
         setUrl('/assets/icons/Main Image.png')

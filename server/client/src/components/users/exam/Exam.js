@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import toast from 'react-hot-toast'
 import { addAnswer } from '../../../actions/answer'
 import { getExamData } from '../../../apis/test.api'
+import { BACKEND_URL } from '../../../utils/constants'
 
 const DisplayButton = ({ num = '', pageId, visited = '' }) => {
 
@@ -148,7 +149,7 @@ const Exam = () => {
             <>
               <div className='flex flex-row w-full h-screen -mt-16'>
                 <div className='flex justify-center items-center w-1/2'>
-                  <img className='w-[701px] h-[423px]' src={currentData.image} alt='test_image' />
+                  <img className='w-[701px] h-[423px]' src={`${BACKEND_URL}/images/${currentData.image}`} alt='test_image' />
                 </div>
                 <div className='flex flex-col justify-center gap-10 w-1/2 px-10'>
                   <div className='mt-20 text-[32px] text-gray-500'>

@@ -1,3 +1,5 @@
+const uuid = require('uuid');
+
 const uploadAvatar = async (req, res, next) => {
   if (req.files && Object.keys(req.files).length !== 0) {
     await Promise.all(
@@ -5,8 +7,8 @@ const uploadAvatar = async (req, res, next) => {
         return new Promise(async (resolve) => {
           const file = req.files[key]
 
-          const suffixUrl = `/assets/avatars/${Date.now()}-avatar-${file.name}.png`
-          const path = `${__dirname}/../client/build${suffixUrl}`
+          const suffixUrl = `${uuid()}-avatar-${file.name}.png`
+          const path = `${__dirname}/../public/avatars/${suffixUrl}`
 
           await file.mv(path, (err) => {
             if (err) {

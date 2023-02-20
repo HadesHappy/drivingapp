@@ -13,8 +13,8 @@ const uploadImage = async (req, res, next) => {
         return new Promise(async (resolve) => {
           const file = req.files[key]
 
-          const suffixUrl = `/assets/imgs/${uuid.v1()}-driving-${file.name}`
-          const path = `${__dirname}/../client/build${suffixUrl}`
+          const suffixUrl = `${uuid.v1()}-driving-${file.name}`
+          const path = `${__dirname}/../public/images/${suffixUrl}`
           const path1 = `${__dirname}/../files/${uuid.v1()}-driving-${file.name}`
 
           await file.mv(path, (err) => {
@@ -23,7 +23,6 @@ const uploadImage = async (req, res, next) => {
               return res.status(500).send(err);
             }
             else {
-              console.log('asdfsdfs')
               req.body[key] = suffixUrl
               resolve(true);
             }

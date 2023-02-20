@@ -3,6 +3,7 @@ import { FaSearch, FaRegBell, FaRegClipboard } from 'react-icons/fa'
 import { useAuth } from '../../../../contexts/AuthContext'
 import { useNavigate } from 'react-router-dom'
 import Avatar from 'react-avatar'
+import { BACKEND_URL } from '../../../../utils/constants'
 
 const UserHeader = () => {
   const { isLoggedIn, logout, account } = useAuth()
@@ -50,7 +51,7 @@ const UserHeader = () => {
         {
           isLoggedIn ?
             <div className='transition-200 relative' onMouseLeave={() => setClicked(false)}>
-              <Avatar className='cursor-pointer' name={account.name} size='30' round='20px' src={account.image} alt='' onClick={handleToggle} />
+              <Avatar className='cursor-pointer' name={account.name} size='30' round='20px' src={`${BACKEND_URL}/avatars/${account.image}`} alt='' onClick={handleToggle} />
               {
                 clicked ?
                   <div className='flex flex-col absolute shadow-md rounded-sm'>
