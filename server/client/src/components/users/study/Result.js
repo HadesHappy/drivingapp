@@ -12,6 +12,7 @@ import { addHistory } from '../../../apis/history.api'
 import { readLiveResult } from '../../../apis/test.api'
 import { displayNum } from '../../../utils/display'
 import { getStudyData } from '../../../apis/test.api'
+import { BACKEND_URL } from '../../../utils/constants'
 
 const Player = ({ liveData = {} }) => {
   let timeLeft = {}
@@ -214,21 +215,21 @@ const StudyResult = () => {
                   falseNum <= 3 ?
                     <>
                       <p className='text-lg text-[#26FF4A]'>Apto</p>
-                      <img src='/assets/icons/checkall.png' alt='checkall' />
+                      <img src={`${BACKEND_URL}icons/checkall.png`} alt='checkall' />
                     </>
                     :
                     <>
                       <p className='text-lg text-[#FF5353]'>No Apto.</p>
-                      <img src='/assets/icons/alertall.png' alt='checkall' />
+                      <img src={`${BACKEND_URL}icons/alertall.png`} alt='checkall' />
                     </>
                 }
               </div>
             </div>
             {
               falseNum <= 3 ?
-                <img className='' src='/assets/emotions/success.png' alt='emotion' />
+                <img className='' src={`${BACKEND_URL}emotions/success.png`} alt='emotion' />
                 :
-                <img className='' src='/assets/emotions/fail.png' alt='emotion' />
+                <img className='' src={`${BACKEND_URL}emotions/fail.png`} alt='emotion' />
             }
 
           </div>
@@ -256,7 +257,7 @@ const StudyResult = () => {
                   <div className='flex flex-row space-x-6'>
                     <div className='h-12 w-2 rounded-md bg-[#3598DB]' />
                     <div className='flex text-center items-center justify-center py-2 w-12 h-12 bg-[#3598DB] rounded-md'>
-                      <img src='/assets/icons/profile.png' alt='profile' />
+                      <img src={`${BACKEND_URL}icons/profile.png`} alt='profile' />
                     </div>
                     <div className='flex flex-col justify-between'>
                       <div className='text-md font-bold'>{account?.name}</div>
@@ -266,7 +267,7 @@ const StudyResult = () => {
                   <div className='flex flex-row space-x-6'>
                     <div className='h-12 w-2 rounded-md bg-[#87A7BC]' />
                     <div className='flex text-center items-center justify-center py-2 w-12 h-12 bg-[#87A7BC] rounded-md'>
-                      <img src='/assets/icons/category.png' alt='profile' />
+                      <img src={`${BACKEND_URL}icons/category.png`} alt='profile' />
                     </div>
                     <div className='flex flex-col justify-center'>
                       <div className='text-md font-bold'>Modo del examen: estudio</div>
@@ -284,7 +285,7 @@ const StudyResult = () => {
                   <div className='flex flex-row space-x-6'>
                     <div className='h-12 w-2 rounded-md bg-[#4EFF6C]' />
                     <div className='flex text-center items-center justify-center py-2 w-12 h-12 bg-[#4EFF6C] rounded-md'>
-                      <img src='/assets/icons/check.png' alt='check' />
+                      <img src={`${BACKEND_URL}icons/check.png`} alt='check' />
                     </div>
                     <div className='flex flex-col justify-center'>
                       <div className='text-md font-bold'>Preguntas correctas: {displayNum(correctNum)}</div>
@@ -303,7 +304,7 @@ const StudyResult = () => {
                   <div className='flex flex-row space-x-6'>
                     <div className='h-12 w-2 rounded-md bg-[#87A7BC]' />
                     <div className='flex text-center items-center justify-center py-2 w-12 h-12 bg-[#87A7BC] rounded-md'>
-                      <img className='text-white w-7 h-7' src='/assets/icons/pen.png' alt='pen' />
+                      <img className='text-white w-7 h-7' src={`${BACKEND_URL}icons/pen.png`} alt='pen' />
                     </div>
                     <div className='flex flex-col justify-between'>
                       <div className='text-md font-bold'>Resultados elementados: {displayNum(cheatNum)}</div>
@@ -313,7 +314,7 @@ const StudyResult = () => {
                   <div className='flex flex-row space-x-6'>
                     <div className='h-12 w-2 rounded-md bg-[#87A7BC]' />
                     <div className='flex text-center items-center justify-center py-2 w-12 h-12 bg-[#87A7BC] rounded-md text-white'>
-                      <img src='/assets/icons/play.png' alt='play' />
+                      <img src={`${BACKEND_URL}icons/play.png`} alt='play' />
                     </div>
                     <div className='flex flex-col justify-center'>
                       <div className='text-md font-bold'>Videos visto: {displayNum(videoNum)}</div>
@@ -322,7 +323,7 @@ const StudyResult = () => {
                   <div className='flex flex-row space-x-6'>
                     <div className='h-12 w-2 rounded-md bg-[#87A7BC]' />
                     <div className='flex text-center items-center justify-center py-2 w-12 h-12 bg-[#87A7BC] rounded-md text-white'>
-                      <img src='/assets/icons/knife.png' alt='knife' />
+                      <img src={`${BACKEND_URL}icons/knife.png`} alt='knife' />
                     </div>
                     <div className='flex flex-col justify-center'>
                       <div className='text-md font-bold'>Has marcado como killers: {displayNum(killerNum)}</div>
@@ -331,7 +332,7 @@ const StudyResult = () => {
                   <div className='flex flex-row space-x-6'>
                     <div className='h-12 w-2 rounded-md bg-[#87A7BC]' />
                     <div className='flex text-center items-center justify-center py-2 w-12 h-12 bg-[#87A7BC] rounded-md text-white'>
-                      <img src='/assets/icons/question.png' alt='question' />
+                      <img src={`${BACKEND_URL}icons/question.png`} alt='question' />
                     </div>
                     <div className='flex flex-col justify-center'>
                       <div className='text-md font-bold'>Has adivindo: {displayNum(guessNum)}</div>
@@ -340,7 +341,7 @@ const StudyResult = () => {
                   <div className='flex flex-row space-x-6'>
                     <div className='h-12 w-2 rounded-md bg-[#87A7BC]' />
                     <div className='flex text-center items-center justify-center py-2 w-12 h-12 bg-[#87A7BC] rounded-md text-white'>
-                      <img src='/assets/icons/glass.png' alt='glass' />
+                      <img src={`${BACKEND_URL}icons/glass.png`} alt='glass' />
                     </div>
                     <div className='flex flex-col justify-center'>
                       <div className='text-md font-bold'>Sabes de memoria: {displayNum(memoryNum)}</div>
@@ -353,14 +354,14 @@ const StudyResult = () => {
         </div>
         <div className='flex items-center justify-center pr-40'>
           <div className='bg-[#3598DB] rounded-xl w-72 h-72 relative'>
-            <img className='-mt-32' src='/assets/emotions/video play.png' alt='video play' />
+            <img className='-mt-32' src={`${BACKEND_URL}emotions/video play.png`} alt='video play' />
             <div className='text-white px-6 -mt-10'>
               <div className='text-lg'>Próxima clase en vivo con Lorena la profe</div>
               <div className='text-sm'>Empieza en 2 horas 25min</div>
               <div className='text-center py-2 mt-4 bg-gray-200 text-[#3598DB] text-sm w-32 rounded-lg cursor-pointer'>Ver Clase</div>
             </div>
             <img className='absolute -mt-40 float-right right-0 pr-14' src='/assets/icons/Vector.png' alt='vector' />
-            <img className='absolute pl-5' src='/assets/icons/Vector2.png' alt='vector' />
+            <img className='absolute pl-5' src={`${BACKEND_URL}icons/Vector2.png`} alt='vector' />
           </div>
         </div>
       </div>

@@ -186,9 +186,9 @@ const TodoTest = ({ test = '', no = '' }) => {
         <div className='flex'>
           {
             enabled ?
-              <img src='/assets/icons/clock1.png' alt='clock1' />
+              <img src={`${BACKEND_URL}icons/clock1.png`} alt='clock1' />
               :
-              <img src='/assets/icons/redclock1.png' alt='redclock1' />
+              <img src={`${BACKEND_URL}icons/redclock1.png`} alt='redclock1' />
           }
         </div>
         <div className="flex justify-end -space-x-2 overflow-hidden min-w-[100px]">
@@ -206,7 +206,7 @@ const TodoTest = ({ test = '', no = '' }) => {
         {
           test.results && test.results[0].isPass ?
             <div className='flex bg-[#CBF9D4FC] space-x-2 py-3 px-4 rounded-xl'>
-              <img src='/assets/icons/complete.png' alt='complete' />
+              <img src={`${BACKEND_URL}icons/complete.png`} alt='complete' />
               <div className='text-sm text-green-400 font-bold'>Completed</div>
             </div>
             :
@@ -217,12 +217,12 @@ const TodoTest = ({ test = '', no = '' }) => {
               :
               <div className='flex bg-[#FFEBCCFC] space-x-2 py-3 px-4 rounded-xl'>
                 <div className='flex w-6 h-6 bg-orange-400 rounded-full justify-center items-center'>
-                  <img src='/assets/icons/Vector1.png' alt='complete' />
+                  <img src={`${BACKEND_URL}icons/Vector1.png`} alt='complete' />
                 </div>
                 <div className='text-sm text-orange-300 font-bold'>Pendiente</div>
               </div>
         }
-        <img className='cursor-pointer' src='/assets/icons/More.png' alt='more' onClick={onDetailClick} />
+        <img className='cursor-pointer' src={`${BACKEND_URL}icons/More.png`} alt='more' onClick={onDetailClick} />
       </div>
       <Modal showModal={showModal} setShowModal={setShowModal} />
     </>

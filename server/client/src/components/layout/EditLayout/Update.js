@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import toast from 'react-hot-toast'
 import { useSelector } from 'react-redux'
 import { updateTest } from '../../../apis/admin.test.api'
@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import isFill from '../../../utils/isFill'
 
 const UpdateButton = () => {
+  const [saving, setSaving] = useState(false);
   const navigate = useNavigate()
   const problems = useSelector(state => state.problemReducer.problems)
   const id = useSelector(state => state.todoReducer.index)
@@ -31,9 +32,18 @@ const UpdateButton = () => {
   }
 
   return (
-    <div className='mb-8 py-5 w-full flex flex-row justify-center items-center cursor-pointer bg-[#DE3A3A] text-white text-lg' type="submit" onClick={handleSubmit}>
-      Guardar prueba
-    </div>
+    <>
+      {
+        saving ?
+          <div className='mb-8 py-5 w-full flex flex-row justify-center items-center cursor-wait bg-[#DE3A3A] text-white text-lg'>
+            Saving...
+          </div> :
+          <div className='mb-8 py-5 w-full flex flex-row justify-center items-center cursor-pointer bg-[#DE3A3A] text-white text-lg' type="submit" onClick={handleSubmit}>
+            Guardar prueba
+          </div>
+      }
+    </>
+
   )
 }
 

@@ -17,7 +17,7 @@ const Profile = () => {
   const { account, changeAccount } = useAuth()
 
   const [formData, setFormData] = useState(fieldsState)
-  const [avatar, setAvatar] = useState(`${BACKEND_URL}avatars/${account?.image}` || '/assets/emotions/avatar1.png')
+  const [avatar, setAvatar] = useState(`${BACKEND_URL}avatars/${account?.image}` || `${BACKEND_URL}emotions/avatar1.png`)
   const [showModal, setShowModal] = useState(false)
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.id]: e.target.value });

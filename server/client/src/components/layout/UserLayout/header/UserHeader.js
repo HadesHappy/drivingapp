@@ -30,7 +30,7 @@ const UserHeader = () => {
   return (
     <div className='pl-40 pr-20 py-0.5 mb-20 flex flex-row justify-between shadow-lg w-full items-center'>
       <div className='flex flex-row'>
-        <img className='w-[80px]' src='/assets/icons/logo.png' alt='logo' />
+        <img className='w-[80px]' src={`${BACKEND_URL}icons/logo.png`} alt='logo' />
         <div className="my-3 bg-gray-300 w-0.5"></div>
         <div className='flex flex-col mx-2 justify-center'>
           <p className='text-lg'>Autoescuela App</p>
@@ -46,7 +46,6 @@ const UserHeader = () => {
         </div>
         <div className='flex flex-row gap-3'>
           <p className='text-sm font-medium'>Autoescuela App</p>
-          {/* <img className='w-7 y-7 rounded-full' src='/assets/icons/logo.png' alt='logo circle' /> */}
         </div>
         {
           isLoggedIn ?

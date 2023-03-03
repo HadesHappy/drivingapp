@@ -1,34 +1,34 @@
-import React from 'react'
+import React, {lazy} from 'react'
 import { useRoutes } from 'react-router-dom';
 
-import SignUp from '../pages/auth/Signup';
-import Signin from '../pages/auth/Signin';
+const SignUp = lazy(() => import('../pages/auth/Signup'));
+const SignIn = lazy(() => import('../pages/auth/Signin'));
 
-import AdminLayout from '../components/layout/AdminLayout'
-import Admin from '../pages/adminpages/Admin'
-import Home from '../pages/adminpages/students/Home'
-import AddStudent from '../pages/adminpages/students/AddStudent';
-import EditStudent from '../pages/adminpages/students/EditStudent';
+const AdminLayout = lazy(() => import('../components/layout/AdminLayout'));
+const Admin = lazy(() => import('../pages/adminpages/Admin'));
+const Home = lazy(() => import('../pages/adminpages/students/Home'));
+const AddStudent = lazy(() => import('../pages/adminpages/students/AddStudent'));
+const EditStudent = lazy(() => import('../pages/adminpages/students/EditStudent'));
 
-import AddLayout from '../components/layout/AddLayout';
-import EditLayout from '../components/layout/EditLayout';
-import QuestionPart from '../components/admin/QuestionPart';
+const AddLayout = lazy(() => import('../components/layout/AddLayout'));
+const EditLayout = lazy(() => import('../components/layout/EditLayout'));
+const QuestionPart = lazy(() => import('../components/admin/QuestionPart'));
 
-import UserLayout from '../components/layout/UserLayout';
-import Content from '../components/users/common/Content';
-import Exam from '../components/users/exam/Exam';
-import Study from '../components/users/study/Study';
-import Profile from '../pages/Profile';
+const UserLayout = lazy(() => import('../components/layout/UserLayout'));
+const Content = lazy(() => import('../components/users/common/Content'));
+const Exam = lazy(() => import('../components/users/exam/Exam'));
+const Study = lazy(() => import('../components/users/study/Study'));
+const Profile = lazy(() => import('../pages/Profile'));
 
-import Preview from '../pages/Preview';
-import ExamResult from '../components/users/exam/Result';
-import StudyResult from '../components/users/study/Result';
+const Preview = lazy(() => import('../pages/Preview'));
+const ExamResult = lazy(() => import('../components/users/exam/Result'));
+const StudyResult = lazy(() => import('../components/users/study/Result'));
 
 export default function Router() {
   const router = [
     {
       path: '/',
-      element: <Signin />
+      element: <SignIn />
     },
     {
       path: '/signup',

@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const fileupload = require("express-fileupload");
+const path = require('path')
 
 const port = 5000
 app.use(fileupload());
@@ -30,6 +31,7 @@ connection.once('open', () => {
 
 const Routes = require('./routes/index')
 app.use('/api', Routes)
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.listen(port, () => {
   console.log(`Server is listenting at http://localhost:${port}`)

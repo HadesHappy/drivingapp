@@ -30,14 +30,14 @@ const Preview = () => {
   return (
     <>
       <div className='mt-8'>
-        <img className='absolute ml-10 -mt-2' src='/assets/icons/logo.png' alt='logo' />
+        <img className='absolute ml-10 -mt-2' src={`${BACKEND_URL}icons/logo.png`} alt='logo' />
         <div className='bg-[#3598DB] flex flex-row justify-between pl-48 w-full h-8 pr-8 items-center'>
           <div className='text-white text-lg'>Autoescuela App Test 001</div>
           <div className='flex flex-row items-center gap-20'>
             <div className='text-white text-lg'>Pregunta {num}.</div>
             <div className='flex flex-row justify-center space-x-4 items-center'>
               <div className='text-white text-lg'>salir</div>
-              <img className='cursor-pointer' src='/assets/icons/Logout.png' alt='' onClick={() => navigate(-1)} />
+              <img className='cursor-pointer' src={`${BACKEND_URL}icons/Logout.png`} alt='' onClick={() => navigate(-1)} />
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@ const Preview = () => {
       <div>
         <div className='flex flex-row w-full h-screen'>
           <div className='flex justify-center items-center -mt-32 w-1/2'>
-            <img className='w-[701px] h-[423px]' src={problem.image ? url : '/assets/icons/Main Image.png'} alt='test_image' />
+            <img className='w-[701px] h-[423px]' src={problem.image ? url : `${BACKEND_URL}icons/Main Image.png`} alt='test_image' />
           </div>
           <div className='flex flex-col gap-10 w-1/2 px-10'>
             <div className='mt-20 text-[32px] text-gray-500'>

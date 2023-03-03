@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { clearAnswer } from '../../../../actions/answer'
 import { displayNum } from '../../../../utils/display'
+import { BACKEND_URL } from '../../../../utils/constants'
 
 const Modal = ({ showModal, setShowModal}) => {
   const num = useSelector(state => state.todoReducer.topNum)
@@ -38,7 +39,7 @@ const Modal = ({ showModal, setShowModal}) => {
                         <div className="text-2xl uppercase text-gray-600">test {displayNum(num)}</div>
                       </div>
                       <div>
-                        <img src='/assets/icons/More.png' alt='more' />
+                        <img src={`${BACKEND_URL}icons/More.png`} alt='more' />
                       </div>
                     </div>
                     <div className='w-full h-0.5 bg-gray-200' />
@@ -46,14 +47,14 @@ const Modal = ({ showModal, setShowModal}) => {
                       <div className='flex flex-col gap-5'>
                         <div className='text-gray-300 uppercase text-lg text-left'>modo estudio</div>
                         <div className='flex flex-row justify-center items-center bg-[#3598DB] rounded-lg'>
-                          <img src='/assets/icons/estudio.png' alt='estudio' className='mx-20 my-20' />
+                          <img src={`${BACKEND_URL}icons/estudio.png`} alt='estudio' className='mx-20 my-20' />
                         </div>
                         <div className='px-auto mt-2 font-bold py-4 text-[#3598DB] uppercase rounded-lg border border-[#3598DB] text-center hover:text-white hover:bg-[#3598DB] cursor-pointer' onClick={onStudyClick}>iniciar test</div>
                       </div>
                       <div className='flex flex-col gap-5'>
                         <div className='text-gray-300 uppercase text-lg text-left'>modo examen</div>
                         <div className='flex flex-row justify-center items-center bg-[#3598DB] rounded-lg'>
-                          <img src='/assets/icons/examen.png' alt='estudio' className='mx-20 my-20' />
+                          <img src={`${BACKEND_URL}icons/examen.png`} alt='estudio' className='mx-20 my-20' />
                         </div>
                         <div className='px-auto font-bold py-4 text-[#3598DB] uppercase rounded-lg border border-[#3598DB] text-center hover:text-white hover:bg-[#3598DB] cursor-pointer' onClick={onExamClick}>iniciar test</div>
                       </div>

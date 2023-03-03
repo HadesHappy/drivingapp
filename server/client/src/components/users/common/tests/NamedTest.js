@@ -180,11 +180,11 @@ const NamedTest = ({ test = '', name = '' }) => {
         {/* <div className='flex flex-row gap-3 items-center'>
           <div className='text-normal text-gray-500'>Dificultad</div>
           <div className='flex flex-row gap-1 items-center'>
-            <img src='/assets/icons/star.png' alt='star' />
-            <img src='/assets/icons/star.png' alt='star' />
-            <img src='/assets/icons/star.png' alt='star' />
-            <img src='/assets/icons/star2.png' alt='star' />
-            <img src='/assets/icons/star2.png' alt='star' />
+            <img src={`${BACKEND_URL}icons/star.png`} alt='star' />
+            <img src={`${BACKEND_URL}icons/star.png`} alt='star' />
+            <img src={`${BACKEND_URL}icons/star.png`} alt='star' />
+            <img src={`${BACKEND_URL}icons/star2.png`} alt='star' />
+            <img src={`${BACKEND_URL}icons/star2.png`} alt='star' />
           </div>
         </div> */}
         <div className='flex space-x-3 text-gray-600 min-w-[150px]'>
@@ -200,11 +200,11 @@ const NamedTest = ({ test = '', name = '' }) => {
           {
             enabled === true ?
               <>
-                <img src='/assets/icons/clock1.png' alt='clock1' />
+                <img src={`${BACKEND_URL}icons/clock1.png`} alt='clock1' />
               </>
               :
               <>
-                <img src='/assets/icons/redclock1.png' alt='redclock1' />
+                <img src={`${BACKEND_URL}icons/redclock1.png`} alt='redclock1' />
               </>
           }
         </div>
@@ -222,7 +222,7 @@ const NamedTest = ({ test = '', name = '' }) => {
         {
           test.results && test.results[0].isPass ?
             <div className='flex bg-[#CBF9D4FC] space-x-2 py-3 px-4 rounded-xl'>
-              <img src='/assets/icons/complete.png' alt='complete' />
+              <img src={`${BACKEND_URL}icons/complete.png`} alt='complete' />
               <div className='text-sm text-green-400 font-bold'>Completed</div>
             </div>
             :
@@ -233,13 +233,13 @@ const NamedTest = ({ test = '', name = '' }) => {
               :
               <div className='flex bg-[#FFEBCCFC] space-x-2 py-3 px-4 rounded-xl'>
                 <div className='flex w-6 h-6 bg-orange-400 rounded-full justify-center items-center'>
-                  <img src='/assets/icons/Vector1.png' alt='complete' />
+                  <img src={`${BACKEND_URL}icons/Vector1.png`} alt='complete' />
                 </div>
                 <div className='text-sm text-orange-300 font-bold'>Pendiente</div>
               </div>
         }
 
-        <img src='/assets/icons/More.png' alt='more' />
+        <img src={`${BACKEND_URL}icons/More.png`} alt='more' />
       </div>
       <Modal showModal={showModal} setShowModal={setShowModal} />
     </>

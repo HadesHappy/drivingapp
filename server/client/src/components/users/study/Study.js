@@ -351,11 +351,11 @@ const Study = () => {
                   <img className='my-3 w-[701px] h-[423px]' src={`${BACKEND_URL}images/${currentData.image}`} alt='test_image' />
                   <div className='flex flex-row gap-5'>
                     <div className='flex flex-row bg-[#3598DB] space-x-5 py-4 w-52 rounded-xl items-center justify-center cursor-pointer' onClick={onVideoClick}>
-                      <img src='/assets/icons/Group 88.png' alt='video' />
+                      <img src={`${BACKEND_URL}icons/Group 88.png`} alt='video' />
                       <span className='text-white text-center text-normal uppercase font-bold'>ver video</span>
                     </div>
                     <div className='flex flex-row bg-[#87A7BC] space-x-5 py-4 w-80 rounded-xl items-center justify-center cursor-pointer' onClick={cheatNumClick}>
-                      <img src='/assets/icons/Path 1525.png' alt='video' />
+                      <img src={`${BACKEND_URL}icons/Path 1525.png`} alt='video' />
                       <span className='text-white text-center text-normal uppercase font-bold'>eliminar respuestas</span>
                       <div className='flex flex-row bg-[#5ECFFF] rounded-full text-sm text-white text-center justify-center items-center w-7 h-7'>{leftCheatNum}</div>
                     </div>

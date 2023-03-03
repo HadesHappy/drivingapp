@@ -7,7 +7,7 @@ const uploadAvatar = async (req, res, next) => {
         return new Promise(async (resolve) => {
           const file = req.files[key]
 
-          const suffixUrl = `${uuid()}-avatar-${file.name}.png`
+          const suffixUrl = `${uuid.v1()}-avatar-${file.name}.png`
           const path = `${__dirname}/../public/avatars/${suffixUrl}`
 
           await file.mv(path, (err) => {
