@@ -11,7 +11,7 @@ const DisplayImage = ({ total = '', users = [] }) => {
     display = (
       <div className='flex justify-end min-w-[150px] -space-x-2 overflow-hidden'>
         {subUsers.map((user, key) =>
-          <Avatar className="inline-block h-8 w-8 rounded-full ring-2 ring-white" size='30' name={user.name} src={`${BACKEND_URL}images/${user.image}`} alt="" key={key} />)}
+          <Avatar className="inline-block h-8 w-8 rounded-full ring-2 ring-white" size='30' name={user.name} src={`${BACKEND_URL}avatars/${user.image}`} alt="" key={key} />)}
         <div className='flex h-8 w-8 rounded-full ring-2 ring-white bg-[#3598DB] text-white font-medium text-center justify-center items-center'>{extraNum}+</div>
       </div>)
   }
@@ -20,7 +20,7 @@ const DisplayImage = ({ total = '', users = [] }) => {
       <div className='flex justify-end min-w-[150px] -space-x-2 overflow-hidden'>
         {
           users.map((user, key) =>
-            <Avatar className="inline-block h-8 w-8 rounded-full ring-2 ring-white" size='30' name={user.name} src={`${BACKEND_URL}images/${user.image}`} alt="" key={key} />)
+            <Avatar className="inline-block h-8 w-8 rounded-full ring-2 ring-white" size='30' name={user.name} src={`${BACKEND_URL}avatars/${user.image}`} alt="" key={key} />)
         }
       </div>
     )
