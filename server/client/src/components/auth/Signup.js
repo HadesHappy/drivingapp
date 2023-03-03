@@ -34,7 +34,6 @@ export default function Signup() {
     else if (formData.password !== formData.confirmPassword)
       toast.error("Password doesn't match")
     else {
-      console.log('formData: ', formData)
       await register(formData)
     }
   }
