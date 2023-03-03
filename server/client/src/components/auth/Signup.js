@@ -6,6 +6,7 @@ import { useAuth } from '../../contexts/AuthContext'
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast'
 import UploadModal from './Editor/UploadModal';
+import { BACKEND_URL } from '../../utils/constants';
 
 const fields = signupFields;
 let fieldsState = {};
@@ -15,7 +16,7 @@ fields.forEach(field => fieldsState[field.id] = '');
 export default function Signup() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState(fieldsState);
-  const [avatar, setAvatar] = useState('/assets/emotions/avatar1.png');
+  const [avatar, setAvatar] = useState(`${BACKEND_URL}emotions/avatar1.png`);
   const { isLoggedIn, register } = useAuth();
   const [showModal, setShowModal] = useState(false)
 
