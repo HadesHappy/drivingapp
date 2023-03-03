@@ -37,7 +37,7 @@ const Player = ({ liveData = {} }) => {
   }
   return (
     <div className='flex flex-row gap-3'>
-      <Avatar className='w-12 h-12 rounded-xl' size={30} name={liveData.name} src={`${BACKEND_URL}${liveData?.image}`} alt='player' />
+      <Avatar className='w-12 h-12 rounded-xl' size={50} name={liveData.name} src={`${BACKEND_URL}${liveData?.image}`} alt='player' />
       <div className='flex flex-col'>
         <div className='flex flex-row space-x-5'>
           <div className='text-gray-700 font-noraml'>{nameSplit(liveData?.name)}</div>
