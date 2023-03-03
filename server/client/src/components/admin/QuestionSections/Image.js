@@ -36,10 +36,10 @@ const Image = () => {
         }
       }
       else
-        setUrl('/assets/icons/Main Image.png')
+        setUrl(`${BACKEND_URL}icons/Main Image.png`)
     }
     else
-      setUrl('/assets/icons/Main Image.png')
+      setUrl(`${BACKEND_URL}icons/Main Image.png`)
   }, [id, problem])
 
   return (
