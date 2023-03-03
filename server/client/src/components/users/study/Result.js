@@ -13,6 +13,7 @@ import { readLiveResult } from '../../../apis/test.api'
 import { displayNum } from '../../../utils/display'
 import { getStudyData } from '../../../apis/test.api'
 import { BACKEND_URL } from '../../../utils/constants'
+import Avatar from 'react-avatar'
 
 const Player = ({ liveData = {} }) => {
   let timeLeft = {}
@@ -36,7 +37,7 @@ const Player = ({ liveData = {} }) => {
   }
   return (
     <div className='flex flex-row gap-3'>
-      <img className='w-12 h-12 rounded-xl' src={`${BACKEND_URL}${liveData?.image}` || `${BACKEND_URL}icons/profile.png`} alt='player' />
+      <Avatar className='w-12 h-12 rounded-xl' size={30} name={liveData.name} src={`${BACKEND_URL}${liveData?.image}`} alt='player' />
       <div className='flex flex-col'>
         <div className='flex flex-row space-x-5'>
           <div className='text-gray-700 font-noraml'>{nameSplit(liveData?.name)}</div>
