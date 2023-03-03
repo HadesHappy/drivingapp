@@ -16,7 +16,7 @@ import { BACKEND_URL } from '../../../utils/constants'
 
 const Player = ({ liveData = {} }) => {
   let timeLeft = {}
-  
+
   if (liveData.time) {
     const difference = -(new Date(liveData.time) - new Date());
     if (difference > 0) {
@@ -36,7 +36,7 @@ const Player = ({ liveData = {} }) => {
   }
   return (
     <div className='flex flex-row gap-3'>
-      <img className='w-12 h-12 rounded-xl' src={liveData?.image} alt='player' />
+      <img className='w-12 h-12 rounded-xl' src={`${BACKEND_URL}${liveData?.image}`} alt='player' />
       <div className='flex flex-col'>
         <div className='flex flex-row space-x-5'>
           <div className='text-gray-700 font-noraml'>{nameSplit(liveData?.name)}</div>
@@ -206,9 +206,9 @@ const StudyResult = () => {
             <div className='flex flex-col items-center justify-center'>
               {
                 falseNum <= 3 ?
-                <div className='text-4xl font-bold py-2'>¡Wow! Eres un crack</div>
-                :
-              <div className='text-4xl font-bold py-2'>ánimo, es normal tener esos fallos</div>
+                  <div className='text-4xl font-bold py-2'>¡Wow! Eres un crack</div>
+                  :
+                  <div className='text-4xl font-bold py-2'>ánimo, es normal tener esos fallos</div>
               }
               <div className='flex flex-row test-lg text-gray-500 gap-2 py-3'>Autoescuela App Test 001
                 {
@@ -360,7 +360,7 @@ const StudyResult = () => {
               <div className='text-sm'>Empieza en 2 horas 25min</div>
               <div className='text-center py-2 mt-4 bg-gray-200 text-[#3598DB] text-sm w-32 rounded-lg cursor-pointer'>Ver Clase</div>
             </div>
-            <img className='absolute -mt-40 float-right right-0 pr-14' src='/assets/icons/Vector.png' alt='vector' />
+            <img className='absolute -mt-40 float-right right-0 pr-14' src={`${BACKEND_URL}icons/Vector.png`} alt='vector' />
             <img className='absolute pl-5' src={`${BACKEND_URL}icons/Vector2.png`} alt='vector' />
           </div>
         </div>
