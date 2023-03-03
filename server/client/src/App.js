@@ -8,7 +8,7 @@ import ClipLoader from 'react-spinners/ClipLoader';
 function App() {
   return (
     <BrowserRouter>
-      <Suspense fallback={<div className='flex flex-row justify-center mt-[50vh]'><ClipLoader color='#403423' size={50} /></div>}>
+      <Suspense fallback={<div className='flex flex-row justify-center mt-[40vh]'><ClipLoader color='#403423' size={30} /></div>}>
         <Router />
       </Suspense>
       <Toaster

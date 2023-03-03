@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getUsers, deleteUser } from '../../../apis/user.api'
 import { FaPlusCircle } from 'react-icons/fa'
 import Avatar from 'react-avatar'
+import { BACKEND_URL } from '../../../utils/constants'
 
 const StudentItem = (props) => {
   const dispatch = useDispatch()
@@ -12,7 +13,7 @@ const StudentItem = (props) => {
   const deleteClick = async () => {
     try {
       await deleteUser(props.user._id);
-      setSearch({page: 1})
+      setSearch({ page: 1 })
       dispatch(getUsers(search.page))
     }
     catch (error) {
@@ -28,7 +29,7 @@ const StudentItem = (props) => {
     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-base">
       <th scope="row" className="text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
         <div className='flex flex-row items-center gap-1 ml-32'>
-          <Avatar name={props.user.name} size='35' round="20px" src={props.user.image} />
+          <Avatar name={props.user.name} size='35' round="20px" src={`${BACKEND_URL}avatars/${props.user.image}`} />
           <div>{props.user.name}</div>
         </div>
       </th>
@@ -72,18 +73,18 @@ const RegisterStudent = () => {
   }, [])
 
   const onNextClick = () => {
-    if (page * count < users.total){
+    if (page * count < users.total) {
       setPage(page + 1)
-      setSearch({ page: page + 1})
+      setSearch({ page: page + 1 })
       dispatch(getUsers(page + 1))
     }
     else {
-      
+
     }
   }
 
   const onPrevClick = () => {
-    if (page > 1){
+    if (page > 1) {
       setPage(page - 1)
       setSearch({ page: page - 1 })
       dispatch(getUsers(page - 1))
